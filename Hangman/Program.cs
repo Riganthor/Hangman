@@ -6,6 +6,24 @@
         {
             // ___________Hangman data______________________
 
+
+            string HANGMAN_LOGO = @"
+   _                                             
+  | |                                            
+  | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+  | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+  | | | | (_| | | | | (_| | | | | | | (_| | | | |
+  |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_| 
+                      __/ |                       
+                     |___/    ";
+
+            const int ZERO = 0;
+            const int EXTRA_SPACE = 2;
+
+            string placeHolder = "";
+            List<string> correctLetters = new List<string>();
+            int numberOfGuesses = 6;
+            bool gameActive = true;
             List<string> hangmanWords = new List<string>
             {
                 "abruptly",
@@ -289,24 +307,7 @@
             =========
             "
             };
-            string HANGMAN_LOGO = @"
-   _                                             
-  | |                                            
-  | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
-  | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
-  | | | | (_| | | | | (_| | | | | | | (_| | | | |
-  |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_| 
-                      __/ |                       
-                     |___/    ";
-
-            const int ZERO = 0;
-            const int extraSpace = 2;
-
-            string placeHolder = ""; 
-            List<string> correctLetters = new List<string>();
-            int numberOfGuesses = 6;
-            bool gameActive = true;
-            string display = "";
+           
 
             //________________Welcome messages_________________________
             Console.WriteLine(HANGMAN_LOGO);
@@ -346,7 +347,7 @@
                     {
                         if (randomWord[i].ToString() == playerGuess)
                         {
-                            placeHolderArray[i * extraSpace] = randomWord[i]; 
+                            placeHolderArray[i * EXTRA_SPACE] = randomWord[i]; 
                             correctGuess = true;
                         }
                     }
