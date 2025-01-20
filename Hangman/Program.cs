@@ -223,9 +223,6 @@
                 "zombie"
             };
 
-
-
-
             List<string> hangmanStages = new List<string>
             {
                 @"
