@@ -19,12 +19,78 @@
 
             const int ZERO = 0;
             const int EXTRA_SPACE = 2;
+            List<string> HANGMAN_STAGES = new List<string>
+            {
+                @"
+              +---+
+              |   |
+              O   |
+             /|\  |
+             / \  |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+              O   |
+             /|\  |
+             /    |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+              O   |
+             /|\  |
+                  |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+              O   |
+             /|   |
+                  |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+              O   |
+              |   |
+                  |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+              O   |
+                  |
+                  |
+                  |
+            =========
+            ",
+                @"
+              +---+
+              |   |
+                  |
+                  |
+                  |
+                  |
+            =========
+            "
+            };
 
             string placeHolder = "";
             List<string> correctLetters = new List<string>();
             int numberOfGuesses = 6;
             bool gameActive = true;
-            List<string> hangmanWords = new List<string>
+            List<string> HANGMAN_WORDS = new List<string>
             {
                 "abruptly",
                 "absurd",
@@ -32,6 +98,7 @@
                 "affix",
                 "askew",
                 "avenue",
+                "awkward",
                 "awkward",
                 "axiom",
                 "azure",
@@ -241,72 +308,7 @@
                 "zombie"
             };
 
-            List<string> hangmanStages = new List<string>
-            {
-                @"
-              +---+
-              |   |
-              O   |
-             /|\  |
-             / \  |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-              O   |
-             /|\  |
-             /    |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-              O   |
-             /|\  |
-                  |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-              O   |
-             /|   |
-                  |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-              O   |
-              |   |
-                  |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-              O   |
-                  |
-                  |
-                  |
-            =========
-            ",
-                @"
-              +---+
-              |   |
-                  |
-                  |
-                  |
-                  |
-            =========
-            "
-            };
+
            
 
             //________________Welcome messages_________________________
@@ -380,7 +382,7 @@
                 }
 
                 
-                Console.WriteLine(hangmanStages[numberOfGuesses]);
+                Console.WriteLine(HANGMAN_STAGES[numberOfGuesses]);
             }
 
 
