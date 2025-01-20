@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection.PortableExecutable;
-
-namespace Hangman
+﻿namespace Hangman
 {
     internal class Program
     {
