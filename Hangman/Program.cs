@@ -90,6 +90,7 @@
             List<string> correctLetters = new List<string>();
             int numberOfGuesses = 6;
             bool gameActive = true;
+            bool gameWon = true;
             List<string> HANGMAN_WORDS = new List<string>
             {
                 "abruptly",
@@ -309,7 +310,7 @@
             };
 
 
-           
+
 
             //________________Welcome messages_________________________
             Console.WriteLine(HANGMAN_LOGO);
@@ -322,7 +323,7 @@
             int wordLength = randomWord.Length;
             foreach (char letter in randomWord)
             {
-                placeHolder += "_ "; 
+                placeHolder += "_ ";
             }
 
             //_______________GAME LOGIC_______________________
@@ -333,30 +334,30 @@
                 Console.WriteLine("Please guess a letter.");
                 string playerGuess = Console.ReadLine().ToLower();
 
-                
+
                 if (correctLetters.Contains(playerGuess))
                 {
                     Console.WriteLine($"You have already guessed {playerGuess}");
                 }
                 else
                 {
-                    
-                    bool correctGuess = false; 
 
-                    
+                    bool correctGuess = false;
+
+
                     char[] placeHolderArray = placeHolder.ToCharArray();
                     for (int i = ZERO; i < randomWord.Length; i++)
                     {
                         if (randomWord[i].ToString() == playerGuess)
                         {
-                            placeHolderArray[i * EXTRA_SPACE] = randomWord[i]; 
+                            placeHolderArray[i * EXTRA_SPACE] = randomWord[i];
                             correctGuess = true;
                         }
                     }
 
-                    placeHolder = new string(placeHolderArray); 
+                    placeHolder = new string(placeHolderArray);
 
-                    
+
                     if (correctGuess)
                     {
                         correctLetters.Add(playerGuess);
@@ -364,28 +365,37 @@
                     else
                     {
                         Console.WriteLine($"The letter {playerGuess} is not in the word! You have lost a life.");
-                        numberOfGuesses--; 
+                        numberOfGuesses--;
 
                         if (numberOfGuesses == ZERO)
                         {
                             gameActive = false;
-                            Console.WriteLine($"***********************YOU LOSE**********************\n The correct word was {randomWord}");
+                            gameWon = false;
+
                         }
                     }
                 }
 
-                
+
                 if (!placeHolder.Contains("_"))
                 {
                     gameActive = false;
-                    Console.WriteLine("****************************YOU WIN****************************");
+
                 }
 
-                
+
                 Console.WriteLine(HANGMAN_STAGES[numberOfGuesses]);
             }
 
+            if (gameWon == false)
+            {
+                Console.WriteLine($"***********************YOU LOSE**********************\n The correct word was {randomWord}");
+            }
 
+            else
+            { 
+                Console.WriteLine("****************************YOU WIN****************************");
+            }
         }
     }
 }
