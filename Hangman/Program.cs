@@ -19,6 +19,7 @@
 
             const int ZERO = 0;
             const int EXTRA_SPACE = 2;
+            const int MAX_LIVES = 6
             List<string> HANGMAN_STAGES = new List<string>
             {
                 @"
@@ -309,9 +310,6 @@
                 "zombie"
             };
 
-
-
-
             //________________Welcome messages_________________________
             Console.WriteLine(HANGMAN_LOGO);
             Console.WriteLine("Welcome to hangman!");
@@ -329,7 +327,7 @@
             //_______________GAME LOGIC_______________________
             while (gameActive)
             {
-                Console.WriteLine($"*************************************************{numberOfGuesses}/6 lives left*************************************************");
+                Console.WriteLine($"*************************************************{numberOfGuesses}/{MAX_LIVES} lives left*************************************************");
                 Console.WriteLine($"The word to guess is {placeHolder}");
                 Console.WriteLine("Please guess a letter.");
                 string playerGuess = Console.ReadLine().ToLower();
