@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            // ___________Hangman data______________________
+            // ___________Hangman variable/constants______________________
 
 
             string HANGMAN_LOGO = @"
