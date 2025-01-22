@@ -317,8 +317,8 @@
 
             //________________Word choice________________________
             Random random = new Random();
-            int index = random.Next(hangmanWords.Count);
-            string randomWord = hangmanWords[index];
+            int index = random.Next(HANGMAN_WORDS.Count);
+            string randomWord = HANGMAN_WORDS[index];
             int wordLength = randomWord.Length;
             foreach (char letter in randomWord)
             {
