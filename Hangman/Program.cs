@@ -385,14 +385,15 @@
                 Console.WriteLine(HANGMAN_STAGES[numberOfGuesses]);
             }
 
-            if (gameWon == false)
+            if (gameWon)
             {
-                Console.WriteLine($"***********************YOU LOSE**********************\n The correct word was {randomWord}");
+                Console.WriteLine("****************************YOU WIN****************************");
             }
 
             else
-            { 
-                Console.WriteLine("****************************YOU WIN****************************");
+            {
+                Console.WriteLine($"***********************YOU LOSE**********************\n The correct word was {randomWord}");
+                
             }
         }
     }
